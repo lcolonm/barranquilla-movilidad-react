@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './estilo.css'; // Conectamos el archivo CSS
+
+// Importamos los componentes
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+// Importamos las páginas
+import Inicio from './pages/Inicio';
+import Analisis from './pages/Analisis';
+import Derechos from './pages/Derechos';
+import Propuestas from './pages/Propuestas';
+import Conclusion from './pages/Conclusion';
+import NoEncontrado from './pages/NoEncontrado';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="contenedor">
+        <header>
+          <h1>Movilidad Urbana en Barranquilla</h1>
+          <p>
+            Un análisis del tráfico vehicular y
+            propuestas para una ciudad más sostenible
+          </p>
+        </header>
+
+        <Navbar />
+
+        <main>
+          <Routes>
+            <Route path="/" element={<Inicio />} />
+            <Route path="/analisis" element={<Analisis />} />
+            <Route path="/derechos" element={<Derechos />} />
+            <Route path="/propuestas" element={<Propuestas />} />
+            <Route path="/conclusion" element={<Conclusion />} />
+            <Route path="*" element={<NoEncontrado />} />
+          </Routes>
+        </main>
+
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

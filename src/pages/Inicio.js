@@ -43,7 +43,7 @@ function Inicio() {
 
             <p className="dato-clave">
                 <strong>Dato clave:</strong> En Barranquilla hay actualmente más de 
-                <strong>500,000 vehículos</strong> 
+                <strong> 500,000 vehículos</strong> 
                 para una población de 1.2 millones de habitantes.
             </p>
         </section>
